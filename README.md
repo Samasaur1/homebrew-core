@@ -32,6 +32,7 @@ Change the `desc`, `homepage`, `url`, `sha256`, and `version`.
 1. Create a tarball using `tar -cvf tarname-1.0.0.tar /path/to/executable`
 2. Publish the tarball in the appropriate GitHub release and note the URL
 3. Run `brew create URL --tap Samasaur1/core`
+4. Fill in `desc` and `homepage` if they aren't what you want
 
 ## Updating a formula
 Simply replace the `url`, `sha256`, and `version` attributes with the correct ones. **Don't worry about overwriting the formula, that's what you are supposed to do.**
