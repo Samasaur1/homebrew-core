@@ -1,4 +1,4 @@
-class RPGCardGenerator < Formula
+class RpgCardGenerator < Formula
   desc "A card generator to interface with https://crobi.github.io/rpg-cards/generator/generate.html"
   homepage "https://github.com/Samasaur1/RPG-card-generator"
   url "https://github.com/Samasaur1/RPG-card-generator/releases/download/v0.4.0/cardgen-0.4.0.tar.gz"
