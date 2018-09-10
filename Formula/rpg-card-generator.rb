@@ -10,6 +10,7 @@ class RpgCardGenerator < Formula
   
   def install
     bin.install "cardgen"
+    system "#{bin}/cardgen", "RPGSTDLIB"
   end
   
   def caveats
