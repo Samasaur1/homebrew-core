@@ -2,7 +2,12 @@
 My core Homebrew formulas
 
 ## Adding a formula
-Copy this:
+1. Create a tarball using `tar -cvf tarname-1.0.0.tar.gz /path/to/executable`
+2. Publish the tarball in the appropriate GitHub release and note the URL
+3. Run `brew create URL --tap Samasaur1/core`
+4. Fill in `desc` and `homepage` if they aren't what you want
+
+It should look similar to this:
 ```ruby
 class Typer < Formula
   desc "An automatic typer for any text you give it"
@@ -18,7 +23,6 @@ class Typer < Formula
   end
 end
 ```
-Change the `desc`, `homepage`, `url`, `sha256`, and `version`.
 
 | Attribute | Notes |
 | --------- | ----- |
@@ -28,14 +32,18 @@ Change the `desc`, `homepage`, `url`, `sha256`, and `version`.
 | `sha256` | The SHA256 checksum for the tarball. Obtain it by running `shasum -a 256 tarname-1.0.0.tar` |
 | `version` | The version of the formula |
 
-### Alternative Method
-1. Create a tarball using `tar -cvf tarname-1.0.0.tar /path/to/executable`
-2. Publish the tarball in the appropriate GitHub release and note the URL
-3. Run `brew create URL --tap Samasaur1/core`
-4. Fill in `desc` and `homepage` if they aren't what you want
-
 ## Updating a formula
-Simply replace the `url`, `sha256`, and `version` attributes with the correct ones. **Don't worry about overwriting the formula, that's what you are supposed to do.**
+
+### New software version
+1. Create a tarball using `tar -cvf tarname-1.0.0.tar.gz /path/to/executable`
+2. Run `shasum -a 256 tarname-1.0.0.tar.gz` and note the hash
+3. Publish the tarball in the appropriate GitHub release and note the URL
+4. Replace the `url`, `sha256`, and `version` attributes with the correct ones
+5. Remove the `revision` attribute if it exists
+
+### Revising formula only
+1. Make your change
+2. INcrement the `revision` attribute. If it doesn't exist, add the line `revision 1`
 
 ## Reference
 https://github.com/syhw/homebrew/blob/master/Library/Contributions/example-formula.rb
