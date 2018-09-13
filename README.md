@@ -43,7 +43,7 @@ end
 
 ### Revising formula only
 1. Make your change
-2. INcrement the `revision` attribute. If it doesn't exist, add the line `revision 1`
+2. Increment the `revision` attribute. If it doesn't exist, add the line `revision 1`
 
 ## Reference
 https://github.com/syhw/homebrew/blob/master/Library/Contributions/example-formula.rb
