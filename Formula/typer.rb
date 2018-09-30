@@ -15,7 +15,7 @@ class Typer < Formula
     ENV["CC"] = Utils.popen_read("xcrun -find clang").chomp
 
     build_path = "#{buildpath}/.build/release/typer"
-    ohai "Building TyperTool"
+    ohai "Building Typer"
     system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
     bin.install build_path
   end
