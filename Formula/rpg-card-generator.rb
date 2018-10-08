@@ -17,7 +17,7 @@ class RpgCardGenerator < Formula
     ohai "Building Cardgen"
     system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
     mv "#{buildpath}/.build/release/RPGCardGenerator", "#{buildpath}/.build/release/cardgen"
-    system("#{buildpath} RPGSTDLIB")
+    system("#{build_path} RPGSTDLIB")
     bin.install build_path
     ohai "Successfully installed Cardgen"
   end
