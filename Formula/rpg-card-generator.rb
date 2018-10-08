@@ -4,7 +4,7 @@ class RpgCardGenerator < Formula
   url "https://github.com/Samasaur1/RPG-card-generator/archive/v0.4.1.tar.gz"
   sha256 "0c9606a3e6a2a5a17bc97e8fb0e9332cebfaa01fa2182d2a5186f0a04a59639b"
   version "0.4.1"
-  revision 7
+  revision 8
 
   depends_on :xcode
 
