@@ -2,10 +2,10 @@
 My core Homebrew formulas
 
 ## Adding a formula
-1. Create a tarball using `tar -cvf tarname-1.0.0.tar.gz /path/to/executable`
-2. Publish the tarball in the appropriate GitHub release and note the URL
-3. Run `brew create URL --tap Samasaur1/core`
+1. Tag a version of the project
+3. Run `brew create https://github.com/Samasaur1/${repo}/archive/${tag}.tar.gz --tap Samasaur1/core`
 4. Fill in `desc` and `homepage` if they aren't what you want
+5. Define your install step
 
 It should look similar to this:
 ```ruby
@@ -23,23 +23,40 @@ class Typer < Formula
   end
 end
 ```
+or this:
+```ruby
+class Typer < Formula
+  desc "An automatic typer for any text you give it"
+  homepage "https://github.com/Samasaur1/TyperTool"
+  url "https://github.com/Samasaur1/TyperTool/archive/v1.0.0.tar.gz"
+  sha256 "95b3f196446e9236a5aa305c69dfe09230b5cc2cba8290b72323b0f4549dd412"
+  version "1.0.0"
+  head "https://github.com/Samasaur1/TyperTool.git"
+  revision 1
 
-| Attribute | Notes |
-| --------- | ----- |
-| `desc` | A one-sentence description of the formula |
-| `homepage` | Points to the project site (if applicable) or the GitHub repository |
-| `url` | Points to a tarball (`.tar.gz` file) containing the tool. To create a tar file, run `tar -cvf tarname-1.0.0.tar /path/to/directory`. |
-| `sha256` | The SHA256 checksum for the tarball. Obtain it by running `shasum -a 256 tarname-1.0.0.tar` |
-| `version` | The version of the formula |
+  depends_on :xcode
+  
+  def install
+    # fixes an issue an issue in homebrew when both Xcode 9.3+ and command line tools are installed
+    # see more details here https://github.com/Homebrew/brew/pull/4147
+    ENV["CC"] = Utils.popen_read("xcrun -find clang").chomp
+
+    build_path = "#{buildpath}/.build/release/typer"
+    ohai "Building Typer"
+    system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
+    bin.install build_path
+  end
+end
+```
 
 ## Updating a formula
 
 ### New software version
-1. Create a tarball using `tar -cvf tarname-1.0.0.tar.gz /path/to/executable`
-2. Run `shasum -a 256 tarname-1.0.0.tar.gz` and note the hash
-3. Publish the tarball in the appropriate GitHub release and note the URL
-4. Replace the `url`, `sha256`, and `version` attributes with the correct ones
-5. Remove the `revision` attribute if it exists
+1. Remove the formula file from `/usr/local/Homebrew/Library/Taps/samasaur1/homebrew-core/Formula`.
+2. Tag a version of the project
+3. Run `brew create https://github.com/Samasaur1/${repo}/archive/${tag}.tar.gz --tap Samasaur1/core`
+4. Fill in `desc` and `homepage` if they aren't what you want
+5. Define your install step
 
 ### Revising formula only
 1. Make your change
@@ -47,3 +64,4 @@ end
 
 ## Reference
 https://github.com/syhw/homebrew/blob/master/Library/Contributions/example-formula.rb
+https://github.com/yonaskolb/Beak/blob/master/Formula/beak.rb
