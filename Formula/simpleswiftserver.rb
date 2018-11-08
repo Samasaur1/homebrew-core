@@ -5,6 +5,7 @@ class Simpleswiftserver < Formula
   sha256 "86e572f0774132f2eca2b8bd04ce4c619654ad75590460c436c98f75212f7ca6"
   version "1.2.0"
   head "https://github.com/Samasaur1/SimpleSwiftServer.git"
+  revision 1
 
   depends_on :xcode
 
@@ -14,7 +15,7 @@ class Simpleswiftserver < Formula
     ENV["CC"] = Utils.popen_read("xcrun -find clang").chomp
 
     build_path = "#{buildpath}/.build/release/server"
-    ohai "Building Typer"
+    ohai "Building SimpleSwiftServer"
     system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
     bin.install build_path
   end
