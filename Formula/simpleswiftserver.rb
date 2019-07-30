@@ -3,9 +3,8 @@ class Simpleswiftserver < Formula
   homepage "https://github.com/Samasaur1/SimpleSwiftServer"
   url "https://github.com/Samasaur1/SimpleSwiftServer/archive/v2.0.0.tar.gz"
   sha256 "b1c75b9a12b1ed8f7ad58bf6e9fabf8ab20d724543746b77bdc6ad9a5f0db909"
-  version "1.2.1"
+  version "2.0.0"
   head "https://github.com/Samasaur1/SimpleSwiftServer.git"
-  revision 1
 
   depends_on :xcode
 
