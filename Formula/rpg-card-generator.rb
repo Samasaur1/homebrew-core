@@ -4,7 +4,7 @@ class RpgCardGenerator < Formula
   url "https://github.com/Samasaur1/RPG-card-generator/archive/v0.4.1.tar.gz"
   sha256 "0c9606a3e6a2a5a17bc97e8fb0e9332cebfaa01fa2182d2a5186f0a04a59639b"
   version "0.4.1"
-  revision 9
+  revision 10
 
   depends_on :xcode
 
@@ -15,7 +15,7 @@ class RpgCardGenerator < Formula
 
     build_path = "#{buildpath}/.build/release/cardgen"
     ohai "Building Cardgen"
-    system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
+    system("swift build --disable-sandbox -c release")
     mv "#{buildpath}/.build/release/RPGCardGenerator", "#{buildpath}/.build/release/cardgen"
     bin.install build_path
     ohai "Successfully installed Cardgen"

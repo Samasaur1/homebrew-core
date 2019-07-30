@@ -5,6 +5,9 @@ class Simpleswiftserver < Formula
   sha256 "b1c75b9a12b1ed8f7ad58bf6e9fabf8ab20d724543746b77bdc6ad9a5f0db909"
   version "1.2.1"
   head "https://github.com/Samasaur1/SimpleSwiftServer.git"
+  revision 1
+
+  depends_on :xcode
 
   def install
     # fixes an issue an issue in homebrew when both Xcode 9.3+ and command line tools are installed
@@ -13,7 +16,7 @@ class Simpleswiftserver < Formula
 
     build_path = "#{buildpath}/.build/release/server"
     ohai "Building SimpleSwiftServer"
-    system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
+    system("swift build --disable-sandbox -c release")
     bin.install build_path
   end
 end

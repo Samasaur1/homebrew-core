@@ -5,7 +5,7 @@ class Typer < Formula
   sha256 "95b3f196446e9236a5aa305c69dfe09230b5cc2cba8290b72323b0f4549dd412"
   version "1.0.0"
   head "https://github.com/Samasaur1/TyperTool.git"
-  revision 1
+  revision 2
 
   depends_on :xcode
   
@@ -16,7 +16,7 @@ class Typer < Formula
 
     build_path = "#{buildpath}/.build/release/typer"
     ohai "Building Typer"
-    system("swift build --disable-sandbox -c release -Xswiftc -static-stdlib")
+    system("swift build --disable-sandbox -c release")
     bin.install build_path
   end
 end
