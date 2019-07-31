@@ -3,7 +3,7 @@ My core Homebrew formulas
 
 ## Adding a formula
 1. Tag a version of the project
-3. Run `brew create https://github.com/Samasaur1/$(REPO)/archive/$(TAG).tar.gz --tap Samasaur1/core`
+3. Run `brew create https://github.com/Samasaur1/$REPO/archive/$TAG.tar.gz --tap Samasaur1/core`
 4. Fill in `desc` and `homepage` if they aren't what you want
 5. Define your install step
 
