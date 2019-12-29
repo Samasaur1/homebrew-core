@@ -1,9 +1,9 @@
 class Repl < Formula
   desc "A simple CLT to prefix any command with a given one"
   homepage "https://github.com/Samasaur1/REPL"
-  url "https://github.com/Samasaur1/REPL/archive/v1.0.0.tar.gz"
-  sha256 "63b67bd0a4f5f2636b1e937b85a133309a82df4560de3cd5d55b17fdd5305774"
-  version "1.0.0"
+  url "https://github.com/Samasaur1/REPL/archive/v1.1.0.tar.gz"
+  sha256 "0a1215b652f5afee3429d617018f066910408e4f7c6a829b28c61b49d3063faf"
+  version "1.1.0"
   head "https://github.com/Samasaur1/REPL.git"
 
   depends_on :xcode
