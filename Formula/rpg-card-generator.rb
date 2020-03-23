@@ -1,9 +1,9 @@
 class RpgCardGenerator < Formula
   desc "A card generator to interface with https://crobi.github.io/rpg-cards/generator/generate.html"
   homepage "https://github.com/Samasaur1/RPG-card-generator"
-  url "https://github.com/Samasaur1/RPG-card-generator/archive/v0.5.0.tar.gz"
-  sha256 "2b288022f0fe91a329088311792855a4ba151e3e991a1b02af26f41c2753d51d"
-  version "0.5.0"
+  url "https://github.com/Samasaur1/RPG-card-generator/archive/v0.6.0.tar.gz"
+  sha256 "ab5a37889e04ee6b51000232337fb2062223af0d02650de292ab1bd2af168ed0"
+  version "0.6.0"
   head "https://github.com/Samasaur1/RPG-card-generator.git"
 
   depends_on :xcode
