@@ -19,4 +19,10 @@ class Simpleswiftserver < Formula
     bin.install build_path
     man1.install "server.1"
   end
+
+  bottle do
+    root_url "https://github.com/Samasaur1/SimpleSwiftServer/releases/download/v4.3.0"
+    cellar :any_skip_relocation
+    sha256 "89076d75263eddd39f057088dcadca93b851dc935c9747d038e53e4b08d4b1d9" => :big_sur
+  end
 end
