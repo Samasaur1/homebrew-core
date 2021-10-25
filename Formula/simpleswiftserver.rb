@@ -1,9 +1,9 @@
 class Simpleswiftserver < Formula
   desc "A Swift executable equivalent to Python's SimpleHTTPServer — plus more!"
   homepage "https://samasaur1.github.io/projects/simpleswiftserver.html"
-  url "https://github.com/Samasaur1/SimpleSwiftServer/archive/v4.3.0.tar.gz"
-  sha256 "1602ebcebac5292de5fd5f5b414b45ee00aad165819d6b50153370955a8099e8"
-  version "4.3.0"
+  url "https://github.com/Samasaur1/SimpleSwiftServer/archive/v4.3.1.tar.gz"
+  sha256 "f06e0f427ace127b08993060c693b977758fd18f59e4f719a84a227e3e09edc4"
+  version "4.3.1"
   head "https://github.com/Samasaur1/SimpleSwiftServer.git"
 
   depends_on :xcode
