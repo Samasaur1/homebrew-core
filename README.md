@@ -1,3 +1,10 @@
+# Important Note
+I've moved away from Homebrew, and was never able to find a nice way to automate bottles, or some of my projects at all. I have no plans to remove any of these formula, nor will I be disabling any actions/workflows that automatically update them. But as of right now (October 2022), I am considering them abandoned, and guarantee no maintenance or support. While I may return to supporting some or all of them in the future, this is also not guaranteed.
+
+However, since all the projects currently in this repository are Swift projects, you can install them with [Mint](https://github.com/yonaskolb/Mint)!
+
+<blockquote>
+
 # homebrew-core
 My core Homebrew formulas
 
@@ -65,3 +72,4 @@ end
 ## Reference
 https://github.com/syhw/homebrew/blob/master/Library/Contributions/example-formula.rb
 https://github.com/yonaskolb/Beak/blob/master/Formula/beak.rb
+</blockquote>
